@@ -6,15 +6,16 @@ spec:
   selector:
     matchLabels:
       app: tomcat
-  replicas: 1
+  replicas: 4
   template:
     metadata:
       labels:
         app: tomcat
     spec:
       containers:
-      - name: tomcat
-        image: tomcat:9.0
-        ports:
-        - containerPort: 8080
-        
+        - name: tomcat
+          image: tomcat:9.0
+          ports:
+            - containerPort: 8080
+      nodeSelector:
+        storageType: ssd

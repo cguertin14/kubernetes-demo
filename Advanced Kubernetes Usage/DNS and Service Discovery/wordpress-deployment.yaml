@@ -32,13 +32,13 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:4.8-apache
-        name: wordpress
-        env:
-        - name: WORDPRESS_DB_HOST
-          value: wordpress-mysql
-        - name: WORDPRESS_DB_PASSWORD
-          value: PASSWORDS_IN_PLAIN_TEXT_ARE_BAD_WE_WILL_SHOW_SOMETHING_MORE_SECURE_LATER
-        ports:
-        - containerPort: 80
+        - image: wordpress:4.8-apache
           name: wordpress
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: wordpress-mysql
+            - name: WORDPRESS_DB_PASSWORD
+              value: PASSWORDS_IN_PLAIN_TEXT_ARE_BAD_WE_WILL_SHOW_SOMETHING_MORE_SECURE_LATER
+          ports:
+            - containerPort: 80
+              name: wordpress
