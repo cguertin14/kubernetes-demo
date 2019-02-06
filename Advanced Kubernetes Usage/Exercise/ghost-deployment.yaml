@@ -40,14 +40,14 @@ spec:
         app: ghost
     spec:
       containers:
-      - name: ghost
-        image: ghost
-        ports:
-        - containerPort: 2368
-        volumeMounts:
-        - name: ghost-persistent-storage
-          mountPath: /var/lib/ghost/content
+        - name: ghost
+          image: ghost
+          ports:
+            - containerPort: 2368
+          volumeMounts:
+            - name: ghost-persistent-storage
+              mountPath: /var/lib/ghost/content
       volumes:
-      - name: ghost-persistent-storage
-        persistentVolumeClaim:
-          claimName: ghost-pv-claim
+        - name: ghost-persistent-storage
+          persistentVolumeClaim:
+            claimName: ghost-pv-claim
