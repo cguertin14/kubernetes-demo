@@ -1,0 +1,21 @@
+# Default values for helm_chart_creation.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+storage: 20Gi
+
+image:
+  repo: ghost
+
+pod:
+  port: 2368
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  enabled: false
+  tier: Frontend 
+  type: LoadBalancer
+  port: 2368
